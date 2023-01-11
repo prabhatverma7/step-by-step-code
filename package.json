@@ -1,0 +1,22 @@
+{
+  "name": "step-by-step-code",
+  "version": "1.0.0",
+  "description": "step by step code started",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prabhatverma7/step-by-step-code.git"
+  },
+  "author": "prabhat.kumar.verma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prabhatverma7/step-by-step-code/issues"
+  },
+  "homepage": "https://github.com/prabhatverma7/step-by-step-code#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}

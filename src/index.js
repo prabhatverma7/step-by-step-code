@@ -10,27 +10,29 @@
 // console.log("Import",app.z("Prabhat verma"));
 
 const express = require('express');
+const filterMid = require('./middleware');
 const app = express();
+const router = express.Router();
 
-const filterMid = (req,res,next)=>{
-    if(!req.query.age){
-        res.send("Please enter the age");
-    } else if(req.query.age<18){
-        res.send('Sorry!! You can access this page');
-    } else {
-        next();
-    }
-}
 
-app.use(filterMid);
+
+//app.use(filterMid);
 
 app.get('',(req,res)=>{
     //console.log(req);
     res.send('This is home page...');
 });
 
-app.get('/about',(req,res)=>{
+app.get('/about',filterMid,(req,res)=>{
     res.send('This is about us page...');
+});
+
+app.get('/user',filterMid,(req,res)=>{
+    res.send('This is user us page...');
+});
+
+app.get('/contact',filterMid,(req,res)=>{
+    res.send('This is contact us page...');
 });
 
 app.listen(5000);

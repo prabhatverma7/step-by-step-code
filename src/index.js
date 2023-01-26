@@ -12,8 +12,20 @@
 const express = require('express');
 const app = express();
 
+const filterMid = (req,res,next)=>{
+    if(!req.query.age){
+        res.send("Please enter the age");
+    } else if(req.query.age<18){
+        res.send('Sorry!! You can access this page');
+    } else {
+        next();
+    }
+}
+
+app.use(filterMid);
+
 app.get('',(req,res)=>{
-    console.log(req);
+    //console.log(req);
     res.send('This is home page...');
 });
 

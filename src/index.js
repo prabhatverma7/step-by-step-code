@@ -37,6 +37,8 @@ router.get('/contact', (req, res) => {
     res.send('This is contact us page...');
 });
 
+
+
 const geData = async () => {
 
     console.log('try to connect mongo db');

@@ -72,6 +72,16 @@ const updateData = async () =>{
        
 }
 
+const deleteData = async () =>{
+    let dbConnection = await dbConnect();
+    let result = await dbConnection.collection('product').deleteOne(
+        {name:'Nord 2'}); 
+
+        if(result.acknowledged)
+        {console.log('record updated')}
+       
+}
+// deleteData();
 // insertData();
 //updateData();
 geData();

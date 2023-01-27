@@ -60,8 +60,20 @@ const insertData = async () =>{
     }
 }
 
-// insertData();
+const updateData = async () =>{
+    let dbConnection = await dbConnect();
+    let result = await dbConnection.collection('product').updateOne(
+        {name:'Nord'},
+        { $set:{ name:'Nord 2' }}
+        ); 
 
+        if(result.acknowledged)
+        {console.log('record updated')}
+       
+}
+
+// insertData();
+//updateData();
 geData();
 
 app.use('/', router);

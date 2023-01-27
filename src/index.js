@@ -17,22 +17,23 @@ const router = express.Router();
 
 
 //app.use(filterMid);
-
+router.use(filterMid);
 app.get('',(req,res)=>{
     //console.log(req);
     res.send('This is home page...');
 });
 
-app.get('/about',filterMid,(req,res)=>{
+app.get('/about',(req,res)=>{
     res.send('This is about us page...');
 });
 
-app.get('/user',filterMid,(req,res)=>{
+router.get('/user',(req,res)=>{
     res.send('This is user us page...');
 });
 
-app.get('/contact',filterMid,(req,res)=>{
+router.get('/contact',(req,res)=>{
     res.send('This is contact us page...');
 });
 
+app.use('/',router);
 app.listen(5000);

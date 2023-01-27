@@ -46,6 +46,22 @@ const geData = async () => {
 
 }
 
+const insertData = async () =>{
+    let dbConnection = await dbConnect();
+    let result = await dbConnection.collection('product').insert({
+        name:'Nord',
+        brand:'OnePlus',
+        price:10000,
+        category:'mobile'
+    });
+
+    if(result.acknowledged){
+        console.log('product data inserted successfully');
+    }
+}
+
+// insertData();
+
 geData();
 
 app.use('/', router);

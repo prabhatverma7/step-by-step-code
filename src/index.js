@@ -18,8 +18,8 @@ const router = express.Router();
 
 
 
-//app.use(filterMid);
-router.use(filterMid);
+//app.use(filterMid); // apply middleware for all route 
+router.use(filterMid); // apply middleware on group of route
 app.get('', (req, res) => {
     //console.log(req);
     res.send('This is home page...');
@@ -84,7 +84,7 @@ const deleteData = async () =>{
 // deleteData();
 // insertData();
 //updateData();
-geData();
+//geData();
 
-app.use('/', router);
+app.use('/', router); // apply middleware on group of route
 app.listen(5000);
